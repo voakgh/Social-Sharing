@@ -21,13 +21,8 @@
                 “It is not earthly rank, nor birth, nor nationality, nor religious privilege, which proves that we are members of the family of God; it is love, a love that embraces all humanity.”   <a href="http://www.egwhite.org">Ellen G White</a>
 
             </p>
-            <button ion-button icon-only (click)="regularShare(i);">
-              
-              Share
-              
-               <ion-icon name="share-alt"></ion-icon>
-            </button>
-            <button ion-button (click)="canShareViaEmail()"></button>
+            <button ion-button (click)="regularShare(i);" icon-only clear><ion-icon name="share-alt"></ion-icon></button>
+            <button ion-button (click)="canShareViaEmail()" icon-only clear><ion-icon ios="md-share"></ion-icon> </button>
 
         </ion-card-content>
     </ion-card>

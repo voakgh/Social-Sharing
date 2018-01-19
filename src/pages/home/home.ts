@@ -12,7 +12,6 @@ export class HomePage {
 
   constructor(private socialSharing: SocialSharing) {
 
-  
 // Check if sharing via email is supported
 this.socialSharing.canShareViaEmail().then(() => {
   // Sharing via email is possible

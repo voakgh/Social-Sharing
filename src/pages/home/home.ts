@@ -3,36 +3,28 @@ import { NavController } from 'ionic-angular';
 import { SocialSharing } from '@ionic-native/social-sharing';
 
 
- 
-
-
-
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
 
-  quotes: any;
-  private apiUrl: string = "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=10"; //api url to retrieve 10 random quotes
-  constructor(private http: Http, private socialSharing: SocialSharing, public navCtrl: NavController) {
-    
-  }
-  async getQuotes() {
-    this.quotes = await this.http.get(this.apiUrl).map(res => res.json()).toPromise();;
-  }
 
-  compilemsg(index): string {
-    var msg = this.quotes[index].content + "-" + this.quotes[index].title;
-    return msg.concat(" \n Sent from my Awesome App !");
-  }
+  constructor(private socialSharing: SocialSharing) {
 
-  regularShare(index) {
-    var msg = this.compilemsg(index);
-    this.socialSharing.share(msg, null, null, null);
-  }
   
+// Check if sharing via email is supported
+this.socialSharing.canShareViaEmail().then(() => {
+  // Sharing via email is possible
+}).catch(() => {
+  // Sharing via email is not possible
+});
+
+// Share via email
+this.socialSharing.shareViaEmail('Body', 'Subject', ['recipient@example.org']).then(() => {
+  // Success!
+}).catch(() => {
+  // Error!
+});
 }
-
-
-
+}

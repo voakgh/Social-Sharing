@@ -21,12 +21,19 @@
                 “It is not earthly rank, nor birth, nor nationality, nor religious privilege, which proves that we are members of the family of God; it is love, a love that embraces all humanity.”   <a href="http://www.egwhite.org">Ellen G White</a>
 
             </p>
-            <button ion-button (click)="regularShare();" icon-only clear><ion-icon name="share-alt"></ion-icon></button>
-            <button ion-button (click)="canShareViaEmail()" icon-only clear><ion-icon ios="ios-share" md="md-share"></ion-icon> </button>
-            <button ion-button (click)="shareViaWhatsApp(message, image, url)" icon-only clear><ion-icon name="logo-whatsapp"></ion-icon></button>
-            <button ion-button (click)="shareViaFacebook" icon-only clear><ion-icon name="logo-facebook"></ion-icon></button>
+            <ion-fab>
+                <button ion-fab color="voak"><ion-icon name="md-share" icon-only clear></ion-icon></button>
+                <ion-fab-list side="right">
+                    <button ion-button (click)="regularShare();" icon-only clear><ion-icon name="share-alt"></ion-icon></button>
+                    <button ion-button (click)="canShareViaEmail()" icon-only clear><ion-icon ios="ios-share" md="md-share"></ion-icon> </button>
+                    <button ion-button (click)="shareViaWhatsApp(message, image, url)" icon-only clear><ion-icon name="logo-whatsapp"></ion-icon></button>
+                    <button ion-button (click)="shareViaFacebook()" icon-only clear><ion-icon name="logo-facebook"></ion-icon></button>
+                </ion-fab-list>
+            </ion-fab>
+
         </ion-card-content>
     </ion-card>
+
 
 
 </ion-content>

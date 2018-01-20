@@ -12,18 +12,29 @@ export class HomePage {
 
   constructor(private socialSharing: SocialSharing) {
 
-// Check if sharing via email is supported
-this.socialSharing.canShareViaEmail().then(() => {
-  // Sharing via email is possible
-}).catch(() => {
-  // Sharing via email is not possible
-});
 
-// Share via email
-this.socialSharing.shareViaEmail('Body', 'Subject', ['recipient@example.org']).then(() => {
-  // Success!
-}).catch(() => {
-  // Error!
-});
+
+
 }
+
+regularShare(){
+  // Check if sharing via email is supported
+  this.socialSharing.canShareViaEmail().then(() => {
+    // Sharing via email is possible
+    alert("it is possible to do a social share");
+  }).catch(() => {
+    // Sharing via email is not possible
+
+  });
+}
+
+  canShareViaEmail(){
+    // Share via email
+    this.socialSharing.shareViaEmail('Body', 'Subject', ['recipient@example.org']).then(() => {
+      // Success!
+      alert("done");
+    }).catch(() => {
+      // Error!
+    });
+  }
 }

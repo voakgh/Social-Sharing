@@ -30,11 +30,19 @@ regularShare(){
 
   canShareViaEmail(){
     // Share via email
+    
     this.socialSharing.shareViaEmail('Body', 'Subject', ['recipient@example.org']).then(() => {
       // Success!
       alert("done");
     }).catch(() => {
       // Error!
     });
+
+    
+  }
+
+  shareViaWhatsApp(message, image, url){
+    this.socialSharing.shareViaWhatsApp(message);
+    message="hello Whatsapp";
   }
 }

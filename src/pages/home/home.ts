@@ -45,4 +45,11 @@ regularShare(){
     this.socialSharing.shareViaWhatsApp(message);
     message="hello Whatsapp";
   }
+
+  shareViaFacebook(message, image, url){
+    this.socialSharing.shareViaFacebook('Doing this through Facebook');
+
+  }
+  
+  
 }
